@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+	<title>게시판</title>
+	<script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+	<style>	
+	th {
+	width : 160px;
+	}
+	td {
+	width : 160px;
+	}
+	</style>
+</head>
+<body>
+<header>
+	<h1>[ 거래 게시판 ]</h1>
+</header>
+	<button onclick="location.href='write'">글쓰기</button>
+<section>
+
+	<br>
+	<table>
+		<tr>
+			<th>번호</th>
+			<th>상태</th>
+			<th>카테고리</th>
+			<th>제목</th>
+			<th>판매가격</th>
+			<th>작성자</th>
+			<th>작성일</th>
+		</tr>
+		<tr th:each="board : ${boardList}" style="text-align:center;">
+			<td th:text="${board.boardNum}"></td>
+			<td th:if="${board.soldout} == true">판매완료</td>
+			<td th:unless="${board.soldout} == true">판매중</td>
+			<td th:text="${board.category}"></td>
+			<td><a th:text="${board.title}" th:href="@{/board/read(boardNum=${board.boardNum})}"></a></td>
+			<td th:text="${board.price}"></td>
+			<td th:text="${board.memberId}"></td>
+			<td th:text="${board.InputDate}"></td>
+		</tr>
+	</table>
+
+</section>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+
+<script>
+$(document).ready(function() {
+	$('#registerform').submit(validation);
+});
+
+function validation() {
+
+	let id = $('#memberId').val();
+	let pw = $('#memberPw').val();
+	let name = $('#memberName').val();
+
+	if (id.length < 3 || id.length > 10) {
+		alert("ID는 3~10자로 입력하세요.");
+		return false;
+	}
+	if (pw.length < 3 || pw.length > 10) {
+		alert("비밀번호는 3~10자로 입력하세요.");
+		return false;
+	}
+	if (name == '') {
+		alert("이름을 입력하세요.");
+		return false;
+	}
+	return true;
+}
+</script>
+</head>
+<body>
+	<div class="login-container">
+		<h1>[ 회원가입 ]</h1>
+		<form id="registerform" action="register" method="post">
+			<table>
+				<tr>
+					<td>ID</td>
+					<td><input type="text" name="memberId" id="memberId">
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="text" name="memberPw" id="memberPw">
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td><input type="text" name="memberName" id="memberName">
+				</tr>
+				<tr>
+					<td>전화번호</td>
+					<td><input type="text" name="phone" id="phone">
+				</tr>
+			</table>
+			<button type="submit">저장</button>
+		</form>
+	</div>
+</body>
+</html>
