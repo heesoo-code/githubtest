@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>중고거래 서비스</title>
+</head>
+<body>
+<h1>[ 중고거래 서비스 ]</h1>
+<p sec:authorize="not isAuthenticated()"><a href="member/registerForm">회원가입</a></p>
+<p sec:authorize="not isAuthenticated()"><a href="member/login">로그인</a></p>
+<p sec:authorize="isAuthenticated()"><a href="logout">로그아웃</a></p>
+<p sec:authorize="isAuthenticated()"><a href="board/list">거래 게시판</a></p>
+</body>
+</html>
