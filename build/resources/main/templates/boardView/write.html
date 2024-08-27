@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+text-align: center;
+}
+form {
+text-align : center;
+display: inline-block;
+}
+
+
+td {
+height : 50px;
+	width: 100px;
+	background-color: grey;
+	border-collapse: collapse;
+	border: 0px;
+		text-align: left;
+}
+
+.td2 {
+	background-color: lightgray;
+	border-collapse: collapse;
+		text-align: left;
+}
+
+.title{
+width : 600px;
+height : 30px;
+}
+
+.contents {
+width : 600px;
+height : 400px;
+}
+</style>
+</head>
+<body>
+<h1>[ 글쓰기 ]</h1>
+	<div>
+	<form action="write" method="post">
+		<table>
+			<tr>
+				<td class="td1">제목</td>
+				<td class="td2"><input type="text" name="title" class="title">
+			</tr>
+			<tr>
+				<td class="td1">내용</td>
+				<td class="td2"><input type="text" name="contents" class="contents"></td>
+			</tr>
+			<tr>
+				<td class="td1">파일첨부</td>
+				<td class="td2" id="name"></td>
+			</tr>
+		</table>
+		<br>
+		<input type="submit" value="저장" class="bt1">
+	</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+$(document).ready(function() {
+	$('#updateForm').submit(validation);
+});
+
+
+function winOpen() {
+	let pw = $('#password').val();
+	let pw2 = $('#password2').val();
+	let name = $('#name').val();
+	
+	if (pw != '' & (pw.length < 3 || pw.length > 10)) {
+		alert("비밀번호는 3~10자로 입력하세요.");
+		return false
+	}
+	if (pw != pw2) {
+		alert("비밀번호는 정확하게 입력하세요.");
+	}
+	if (name == '') {
+		alert("이름을 입력하세요.");
+		return false;
+	}
+	return true;
+	
+}
+</script>
+</head>
+<body>
+<body>
+	<h1>[ 회원정보수정 ]</h1>
+	<div>
+	<form action="info" method="post">
+		<table>
+			<tr>
+				<td class="td1">ID</td>
+				<td class="td2"></td>
+			</tr>
+			<tr>
+				<td class="td1">비밀번호</td>
+				<td class="td2"><input type="text" placeholder="비밀번호 입력"
+					name="memberPassword" id="password"><input type="text"
+					placeholder="비밀번호 다시 입력"></td>
+				<td class="td2"></td>
+			</tr>
+			<tr>
+				<td class="td1">이름</td>
+				<td class="td2"><input type="text" th:value="{member.memberName}"
+					name="memberName" id="name"></td>
+				<td class="td2"></td>
+			</tr>
+			<tr>
+				<td class="td1">이메일</td>
+				<td class="td2"><input type="text" th:value="{member.email}
+					name="email"></td>
+				<td class="td2"></td>
+			</tr>
+			<tr>
+				<td class="td1">전화번호</td>
+				<td class="td2"><input type="text"th:value="{member.phone}
+					name="phone"></td>
+				<td class="td2"></td>
+			</tr>
+			<tr>
+				<td class="td1">주소</td>
+				<td Colspan="2" class="td2"><input type="text"
+					th:value="{member.address} name="address" style="width: 200px;"></td>
+			</tr>
+		</table>
+		<br>
+		<input type="submit" value="가입" class="bt1">
+		<input type="button" value="다시쓰기" class="bt1">
+	</form>
+	</div>
+</body>
+</body>
+</html>
