@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+$(document).ready(function() {
+	$('#duplicate').click(winOpen);
+});
+
+
+function winOpen() {
+	let w = window.open('idCheck', 'win', 'left=500,top=200,width=500,height=400');
+	
+}
+</script>
+<style>
+body {
+text-align: center;
+}
+form {
+text-align : center;
+display: inline-block;
+}
+
+
+td {
+	width: 100px;
+	background-color: grey;
+	border-collapse: collapse;
+	border: 0px;
+		text-align: left;
+}
+
+.td2 {
+	background-color: lightgray;
+	border-collapse: collapse;
+		text-align: left;
+}
+
+.bt1 {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<h1>[ 회원가입 ]</h1>
+	<div>
+	<form action="join" method="post">
+		<table>
+			<tr>
+				<td class="td1">ID</td>
+				<td class="td2"><input type="text" placeholder="ID중복확인 이용"
+					name="memberId" id="id"  readonly="readonly"></td>
+				<td><input type="button" value="아이디 중복확인" id="duplicate"></td>
+			</tr>
+			<tr>
+				<td class="td1">비밀번호</td>
+				<td class="td2"><input type="text" placeholder="비밀번호 입력"
+					name="memberPassword" id="password"><input type="text"
+					placeholder="비밀번호 다시 입력"></td>
+				<td class="td2"></td>
+			</tr>
+			<tr>
+				<td class="td1">이름</td>
+				<td class="td2"><input type="text" placeholder="이름 입력"
+					name="memberName" id="name"></td>
+				<td class="td2"></td>
+			</tr>
+			<tr>
+				<td class="td1">이메일</td>
+				<td class="td2"><input type="text" placeholder="이메일 입력"
+					name="email"></td>
+				<td class="td2"></td>
+			</tr>
+			<tr>
+				<td class="td1">전화번호</td>
+				<td class="td2"><input type="text" placeholder="전화번호 입력"
+					name="phone"></td>
+				<td class="td2"></td>
+			</tr>
+			<tr>
+				<td class="td1">주소</td>
+				<td Colspan="2" class="td2"><input type="text"
+					placeholder="주소 입력" name="address" style="width: 200px;"></td>
+			</tr>
+		</table>
+		<br>
+		<input type="submit" value="가입" class="bt1">
+		<input type="button" value="다시쓰기" class="bt1">
+	</form>
+	</div>
+</body>
+</html>
